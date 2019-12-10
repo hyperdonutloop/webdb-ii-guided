@@ -2,6 +2,7 @@
 exports.seed = function(knex) {
   // Deletes ALL existing entries
   return knex('vegges').del()
+    .truncate() // empties the table and resets primary key
     .then(function () {
       // Inserts seed entries
       return knex('vegges').insert([
